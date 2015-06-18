@@ -52,6 +52,10 @@ public class MainActivity extends ListActivity {
         // informacja o danych zwiazanych z kliknieciem (id jest zwiazane z nasza baza)
         Log.i("BAZA", "Pozycja: " + position + " ID: " + id);
 
+        Intent in = new Intent(this, EditActivity.class);
+        in.putExtra("PID", id);
+        startActivity(in);
+
     }
 
     // metoda uzupelnia nasza liste danymi pobranymi z bazy

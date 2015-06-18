@@ -69,7 +69,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }
 
     // pobranie pojedynczej notatki
-    public Notatka getNote(int id) {
+    public Notatka getNote(long id) {
 
         // zamiast new String[] { KEY_ID, KEY_TITLE, KEY_BODY }
         // mo�emy u�y� null (wszystkie kolumny)
