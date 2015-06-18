@@ -16,7 +16,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     stałe do bazy
     wersja bazy
     */
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
 
     // nazwa bazy
     private static final String DATABASE_NAME = "bazaNotatek";
@@ -28,6 +28,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public static final String KEY_ID = "_id";
     public static final String KEY_TITLE = "tytul";
     public static final String KEY_BODY = "tresc";
+    public static final String KEY_DATE = "date";
 
     // referencja do bazy
     private SQLiteDatabase db;
@@ -41,7 +42,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String CREATE_NOTES_TABLE = "CREATE TABLE " + TABLE_NOTES + "(" + KEY_ID +
-                " INTEGER PRIMARY KEY," + KEY_TITLE + " TEXT," + KEY_BODY + " TEXT" + ")";
+                " INTEGER PRIMARY KEY," + KEY_TITLE + " TEXT," + KEY_BODY + " TEXT," + KEY_DATE + " TEXT" + ")";
         db.execSQL(CREATE_NOTES_TABLE);
     }
 
@@ -62,9 +63,11 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
         values.put(KEY_TITLE, notatka.getTytul()); // tytu� notatki
         values.put(KEY_BODY, notatka.getTresc());  // tre�� notatki
+        values.put(KEY_DATE, notatka.getDate());
 
         // wstawienie notatki do bazy
         db.insert(TABLE_NOTES, null, values);
+        db.close();
 
 
     }
@@ -74,14 +77,14 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
         // zamiast new String[] { KEY_ID, KEY_TITLE, KEY_BODY }
         // mo�emy u�y� null (wszystkie kolumny)
-        Cursor cursor = db.query(TABLE_NOTES, new String[]{KEY_ID, KEY_TITLE, KEY_BODY},
+        Cursor cursor = db.query(TABLE_NOTES, new String[]{KEY_ID, KEY_TITLE, KEY_BODY, KEY_DATE},
                 KEY_ID + "=?", new String[]{String.valueOf(id)}, null, null, null, null);
 
         if (cursor != null)
             cursor.moveToFirst();
 
         Notatka notatka = new Notatka(Integer.parseInt(cursor.getString(0)),
-                cursor.getString(1), cursor.getString(2));
+                cursor.getString(1), cursor.getString(2), cursor.getString(3));
 
         // zwracamy notatk�
         return notatka;
@@ -118,7 +121,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     public Cursor fetchAllNotes() {
         // wszystkie notatki w formie obiektu klasy Cursor
-        return db.query(TABLE_NOTES, new String[]{KEY_ID, KEY_TITLE, KEY_BODY}, null, null, null, null, null);
+        return db.query(TABLE_NOTES, new String[]{KEY_ID, KEY_TITLE, KEY_BODY}, null, null, null, null, null); //hmmm +null?
     }
 
     // pobranie liczby notatek w bazie
@@ -137,6 +140,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(KEY_TITLE, notatka.getTytul());
         values.put(KEY_BODY, notatka.getTresc());
+        values.put(KEY_DATE, notatka.getDate());
 
         // aktualizacja wiersza
         return db.update(TABLE_NOTES, values, KEY_ID + " = ?",
