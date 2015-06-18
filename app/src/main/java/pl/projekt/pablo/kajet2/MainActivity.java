@@ -9,11 +9,14 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
+import android.widget.TextView;
 
 
 public class MainActivity extends ListActivity {
 
     private DatabaseHandler db;
+    private int noteTitle;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,12 +63,17 @@ public class MainActivity extends ListActivity {
         Cursor c = db.fetchAllNotes();
         startManagingCursor(c);
 
-        String[] from = new String[] { DatabaseHandler.KEY_TITLE,  DatabaseHandler.KEY_BODY};
-        int[] to = new int[] { R.id.noteTitle, R.id.noteInfo };
+        String[] from = new String[] { DatabaseHandler.KEY_TITLE,  DatabaseHandler.KEY_BODY, "#32b0e5"};
+       // holder.title.setTextColor(Color.parseColor(note.getColor()));
+        int[] to = new int[] { R.id.noteTitle, R.id.noteInfo};
+        findViewById(R.id.noteTitle).setBackgroundColor(0xFF00FF00);
+       // ((TextView)row.findViewById(R.id.noteTitle)).setTextColor(Color.parseColor(getItem(position).getColor()));
 
         // Uzupelniamy liste wartosciami
         SimpleCursorAdapter notes = new SimpleCursorAdapter(this, R.layout.list_item, c, from, to);
+       // ((TextView) notes).setTextColor(0xFF00FF00);
         setListAdapter(notes);
+
 
     }
 }

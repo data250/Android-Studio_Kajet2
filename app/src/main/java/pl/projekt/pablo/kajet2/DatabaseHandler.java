@@ -117,7 +117,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     public Cursor fetchAllNotes() {
         // wszystkie notatki w formie obiektu klasy Cursor
-        return db.query(TABLE_NOTES, new String[]{KEY_ID, KEY_TITLE, KEY_BODY}, null, null, null, null, null);
+        return db.query(TABLE_NOTES, new String[]{KEY_ID, KEY_TITLE, KEY_BODY, "#000000"}, null, null, null, null, null);
     }
 
     // pobranie liczby notatek w bazie
