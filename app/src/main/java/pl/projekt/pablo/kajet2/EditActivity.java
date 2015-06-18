@@ -82,4 +82,17 @@ public class EditActivity extends ActionBarActivity {
         db.close();
         finish();
 
-    }}
+    }
+
+    public void delete(View v) {
+        DatabaseHandler db = new DatabaseHandler(this);
+        db.deleteNote(idEdit);
+        db.close();
+        finish();
+
+    }
+
+    public  void  powrot(View v){
+        finish();
+    }
+}

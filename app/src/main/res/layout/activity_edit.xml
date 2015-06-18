@@ -10,11 +10,12 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:hint="@string/title" />
+
     <EditText
         android:id="@+id/body"
         android:layout_width="fill_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="0.82"
         android:gravity="top"
         android:hint="@string/body" />
 
@@ -35,16 +36,19 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Usuń"
-            android:id="@+id/button"
+            android:text="@string/usun"
+            android:id="@+id/buttonDelete"
             android:layout_gravity="bottom"
-            android:background="#ffc10000" />
+            android:background="#ffc10000"
+            android:onClick="delete"
+            android:clickable="true" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Powrót"
-            android:id="@+id/button2" />
+            android:text="@string/powrot"
+            android:id="@+id/button2"
+            android:onClick="powrot" />
     </TableLayout>
 
 </LinearLayout>
