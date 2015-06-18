@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:orientation="vertical" >
+    <EditText
+        android:id="@+id/title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/title" />
+
+    <EditText
+        android:id="@+id/body"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.82"
+        android:gravity="top"
+        android:hint="@string/body" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/save"
+            android:layout_gravity="left"
+            android:background="#ff019600"
+            android:onClick="upDate"
+            android:id="@+id/btnSave" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/usun"
+            android:id="@+id/buttonDelete"
+            android:layout_gravity="bottom"
+            android:background="#ffc10000"
+            android:onClick="delete"
+            android:clickable="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/powrot"
+            android:id="@+id/button2"
+            android:onClick="powrot" />
+    </TableLayout>
+
+</LinearLayout>

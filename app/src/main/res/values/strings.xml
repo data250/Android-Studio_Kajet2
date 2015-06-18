@@ -11,4 +11,7 @@
     <string name="body">Treść notatki</string>
     <string name="save">Zapisz</string>
     <string name="title_activity_add_note">Nowa notatka</string>
+    <string name="title_activity_edit">EditActivity</string>
+    <string name="usun">USUŃ</string>
+    <string name="powrot">POWRÓT</string>
 </resources>

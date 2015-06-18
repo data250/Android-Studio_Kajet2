@@ -10,7 +10,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="pl.projekt.pablo.kajet2.MainActivity"
+            android:name=".MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,12 +19,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="pl.projekt.pablo.kajet2.AddNoteActivity"
+            android:name=".AddNoteActivity"
             android:label="@string/title_activity_add_note"
-            android:parentActivityName="pl.projekt.pablo.kajet2.MainActivity" >
+            android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="pl.projekt.pablo.kajet2.MainActivity" />
+        </activity>
+        <activity
+            android:name=".EditActivity"
+            android:label="@string/title_activity_edit" >
         </activity>
     </application>
 

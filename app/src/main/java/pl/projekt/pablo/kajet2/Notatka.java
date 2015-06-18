@@ -2,7 +2,7 @@ package pl.projekt.pablo.kajet2;
 
 public class Notatka {
 
-    private int id;
+    private long id;
     private String tytul;
     private String tresc;
 
@@ -11,7 +11,7 @@ public class Notatka {
         this.tytul = null;
         this.tresc = null;
     }
-    public Notatka(int id, String tytul, String tresc) {
+    public Notatka(long id, String tytul, String tresc) {
         this.id = id;
         this.tytul = tytul;
         this.tresc = tresc;
@@ -21,7 +21,7 @@ public class Notatka {
         this.tresc = tresc;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 

@@ -66,10 +66,11 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         // wstawienie notatki do bazy
         db.insert(TABLE_NOTES, null, values);
 
+
     }
 
     // pobranie pojedynczej notatki
-    public Notatka getNote(int id) {
+    public Notatka getNote(long id) {
 
         // zamiast new String[] { KEY_ID, KEY_TITLE, KEY_BODY }
         // mo�emy u�y� null (wszystkie kolumny)
