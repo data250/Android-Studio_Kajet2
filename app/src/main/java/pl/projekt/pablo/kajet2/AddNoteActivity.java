@@ -10,6 +10,9 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class AddNoteActivity extends Activity {
 
     @Override
@@ -35,7 +38,12 @@ public class AddNoteActivity extends Activity {
         editText = (EditText) findViewById(R.id.body);
         String body = editText.getText().toString();
 
-        Notatka note = new Notatka(title, body);
+        SimpleDateFormat simpleDateHere = new SimpleDateFormat("yyyy-MM-dd kk:mm:ss");
+        String date = simpleDateHere.format(new Date());
+
+
+
+        Notatka note = new Notatka(title, body, date);
         db.addNote(note);
         finish();
     }

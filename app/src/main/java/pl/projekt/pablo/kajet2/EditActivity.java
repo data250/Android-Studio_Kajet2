@@ -7,6 +7,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 
 public class EditActivity extends ActionBarActivity {
@@ -33,8 +37,12 @@ public class EditActivity extends ActionBarActivity {
         note = db.getNote(id);
         EditText tytul = (EditText) findViewById(R.id.title);
         EditText tresc = (EditText) findViewById(R.id.body);
+        TextView data = (TextView) findViewById(R.id.textDate);
         tytul.setText(note.getTytul());
         tresc.setText(note.getTresc());
+        data.setText(note.getDate());
+
+
 
         return true;
     }
@@ -77,7 +85,10 @@ public class EditActivity extends ActionBarActivity {
         editText = (EditText) findViewById(R.id.body);
         String body = editText.getText().toString();
 
-        Notatka note = new Notatka(idEdit ,title, body);
+        SimpleDateFormat simpleDateHere = new SimpleDateFormat("yyyy-MM-dd kk:mm:ss");
+        String date = simpleDateHere.format(new Date());
+
+        Notatka note = new Notatka(idEdit ,title, body, date);
         db.updateNote(note);
         db.close();
         finish();

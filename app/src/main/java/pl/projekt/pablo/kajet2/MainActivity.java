@@ -1,5 +1,6 @@
 package pl.projekt.pablo.kajet2;
 
+import android.app.Dialog;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.database.Cursor;
@@ -9,11 +10,20 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
-
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.app.AlertDialog.Builder;
+import android.content.DialogInterface;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends ListActivity {
 
     private DatabaseHandler db;
+    private static final int DIALOG_ALERT = 10;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +55,12 @@ public class MainActivity extends ListActivity {
         startActivity(intent);
     }
 
+    public void deleteAll(View v) {
+        Intent intent = new Intent(this, DeleteAllActivity.class);
+        startActivity(intent);
+
+    }
+
     @Override
     protected void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
@@ -72,4 +88,6 @@ public class MainActivity extends ListActivity {
         setListAdapter(notes);
 
     }
+
+
 }

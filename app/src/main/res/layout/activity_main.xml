@@ -37,9 +37,19 @@
             android:id="@+id/addnotebutton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0.47"
+            android:layout_weight="0.27"
             android:text="@string/add_note"
-            android:onClick="addNote" />
+            android:onClick="addNote"
+            android:background="#ff19b100" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/usun_wszystki"
+            android:id="@+id/buttonUsun"
+            android:layout_weight="0.27"
+            android:background="#ffc80003"
+            android:onClick="deleteAll" />
     </LinearLayout>
 
 </RelativeLayout>

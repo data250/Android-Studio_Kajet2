@@ -11,7 +11,14 @@
     <string name="body">Treść notatki</string>
     <string name="save">Zapisz</string>
     <string name="title_activity_add_note">Nowa notatka</string>
-    <string name="title_activity_edit">EditActivity</string>
+    <string name="title_activity_edit">Edycja notatki</string>
     <string name="usun">USUŃ</string>
     <string name="powrot">POWRÓT</string>
+    <string name="modified">Ostatnia zmiana:</string>
+    <string name="usun_wszystki">Usuń wszystkie</string>
+    <string name="title_activity_delete_all">Usuwanie wszystkich</string>
+    <string name="usun_all">Usuwanie WSZYSTKICH notatek</string>
+    <string name="potwierdzenie">Jesteś pewien że chcesz usunąć WSZYSTKIE notatki?</string>
+    <string name="operacja">(tej operacji nie można cofnąć!)</string>
+    <string name="nie_usuwaj">NIE USUWAJ</string>
 </resources>
