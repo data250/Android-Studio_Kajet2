@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Kajet2</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="add_note">Dodaj notatke</string>
+    <string name="no_notes">Brak notatek</string>
+    <!--<string name="app_name">Kajet</string>-->
+    <string name="menu_settings">Settings</string>
+    <string name="title">Tytuł notatki</string>
+    <string name="body">Treść notatki</string>
+    <string name="save">Zapisz</string>
+    <string name="title_activity_add_note">Nowa notatka</string>
+</resources>

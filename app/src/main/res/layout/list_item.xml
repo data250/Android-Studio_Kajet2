@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/noteTitle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="2dip"
+        android:paddingTop="6dip"
+        android:textColor="#33b5e5"
+        android:textIsSelectable="false"
+        android:textSize="14sp" />
+    <TextView
+        android:id="@+id/noteInfo"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#acacac"
+        android:paddingBottom="2dip"
+        android:textIsSelectable="false"
+        android:textSize="12sp"
+        />
+</LinearLayout>
