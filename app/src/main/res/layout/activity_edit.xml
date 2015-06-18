@@ -28,7 +28,9 @@
             android:layout_height="wrap_content"
             android:text="@string/save"
             android:layout_gravity="left"
-            android:background="#ff019600" />
+            android:background="#ff019600"
+            android:onClick="upDate"
+            android:id="@+id/btnSave" />
 
         <Button
             android:layout_width="wrap_content"

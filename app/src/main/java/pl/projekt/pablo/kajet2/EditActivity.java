@@ -11,6 +11,7 @@ import android.widget.EditText;
 
 public class EditActivity extends ActionBarActivity {
 
+    public long idEdit;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +27,7 @@ public class EditActivity extends ActionBarActivity {
         Intent i = getIntent();
         long id;
         id = i.getLongExtra("PID", 0);
+        idEdit = id;
         DatabaseHandler db = new DatabaseHandler(this);
         Notatka note = new Notatka();
         note = db.getNote(id);
@@ -64,4 +66,20 @@ public class EditActivity extends ActionBarActivity {
         db.addNote(note);
         finish();
     }
-}
+
+
+    public void upDate(View v) {
+        DatabaseHandler db = new DatabaseHandler(this);
+
+        EditText editText = (EditText) findViewById(R.id.title);
+        String title = editText.getText().toString();
+
+        editText = (EditText) findViewById(R.id.body);
+        String body = editText.getText().toString();
+
+        Notatka note = new Notatka(idEdit ,title, body);
+        db.updateNote(note);
+        db.close();
+        finish();
+
+    }}
