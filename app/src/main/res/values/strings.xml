@@ -15,4 +15,10 @@
     <string name="usun">USUŃ</string>
     <string name="powrot">POWRÓT</string>
     <string name="modified">Ostatnia zmiana:</string>
+    <string name="usun_wszystki">Usuń wszystkie</string>
+    <string name="title_activity_delete_all">DeleteAllActivity</string>
+    <string name="usun_all">Usuwanie WSZYSTKICH notatek</string>
+    <string name="potwierdzenie">Jesteś pewien że chcesz usunąć WSZYSTKIE notatki?</string>
+    <string name="operacja">(tej operacji nie można cofnąć!)</string>
+    <string name="nie_usuwaj">NIE USUWAJ</string>
 </resources>

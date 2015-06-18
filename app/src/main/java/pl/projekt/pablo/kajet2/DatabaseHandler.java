@@ -163,4 +163,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     }
 
+    public void deleteAll(){
+        db.delete(TABLE_NOTES, null, null);
+    }
+
 }

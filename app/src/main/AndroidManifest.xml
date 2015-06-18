@@ -30,6 +30,10 @@
             android:name=".EditActivity"
             android:label="@string/title_activity_edit" >
         </activity>
+        <activity
+            android:name=".DeleteAllActivity"
+            android:label="@string/title_activity_delete_all" >
+        </activity>
     </application>
 
 </manifest>
