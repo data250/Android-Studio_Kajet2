@@ -63,7 +63,7 @@ public class MainActivity extends ListActivity {
         String[] from = new String[] { DatabaseHandler.KEY_TITLE,  DatabaseHandler.KEY_BODY};
         int[] to = new int[] { R.id.noteTitle, R.id.noteInfo };
 
-        // Uzupelniamy liste wartosciami
+        // Uzupelniamy liste wartosciami ttttttttttttttttetst
         SimpleCursorAdapter notes = new SimpleCursorAdapter(this, R.layout.list_item, c, from, to);
         setListAdapter(notes);
 
