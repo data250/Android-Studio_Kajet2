@@ -20,10 +20,10 @@ public class MainActivity extends ListActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // nowy obiekt - obs³uga bazy danych
+        // nowy obiekt - obsÅ‚uga bazy danych
         db = new DatabaseHandler(this);
 
-        // wywo³anie metody uzupe³niaj¹cej listê
+        // wywoÅ‚anie metody uzupeÅ‚niajÄ…cej lisÄ™
         fillData();
     }
 
@@ -35,12 +35,12 @@ public class MainActivity extends ListActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.activity_main, menu);
+        getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
     public void addNote(View v) {
-        // wywo³anie aktywnoœci
+        // wywoÅ‚anie aktywnoÅ›ci
         Intent intent = new Intent(this, AddNoteActivity.class);
         startActivity(intent);
     }
@@ -49,12 +49,12 @@ public class MainActivity extends ListActivity {
     protected void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
 
-        // informacja o danych zwi¹zanych z klikniêciem (id jest zwi¹zane z nasz¹ baz¹)
+        // informacja o danych zwiazanych z kliknieciem (id jest zwiazane z nasza baza)
         Log.i("BAZA", "Pozycja: " + position + " ID: " + id);
 
     }
 
-    // metoda uzupe³nia nasz¹ listê danymi pobranymi z bazy
+    // metoda uzupelnia nasza liste danymi pobranymi z bazy
     private void fillData() {
 
         Cursor c = db.fetchAllNotes();
@@ -63,7 +63,7 @@ public class MainActivity extends ListActivity {
         String[] from = new String[] { DatabaseHandler.KEY_TITLE,  DatabaseHandler.KEY_BODY};
         int[] to = new int[] { R.id.noteTitle, R.id.noteInfo };
 
-        // Uzupe³niamy listê wartoœciami
+        // Uzupelniamy liste wartosciami
         SimpleCursorAdapter notes = new SimpleCursorAdapter(this, R.layout.list_item, c, from, to);
         setListAdapter(notes);
 

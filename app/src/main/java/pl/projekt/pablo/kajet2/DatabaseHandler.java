@@ -12,8 +12,10 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DatabaseHandler extends SQLiteOpenHelper {
 
-    // sta³e do bazy
-    // wersja bazy
+    /*
+    staÅ‚e do bazy
+    wersja bazy
+    */
     private static final int DATABASE_VERSION = 1;
 
     // nazwa bazy
@@ -46,7 +48,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     // aktualizacja bazy
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        // usuniêcie tabeli z notatkami
+        // usuni&#x119;cie tabeli z notatkami
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NOTES);
 
         // ponowne utworzenie tabeli
@@ -58,8 +60,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
         ContentValues values = new ContentValues();
 
-        values.put(KEY_TITLE, notatka.getTytul()); // tytu³ notatki
-        values.put(KEY_BODY, notatka.getTresc());  // treœæ notatki
+        values.put(KEY_TITLE, notatka.getTytul()); // tytuï¿½ notatki
+        values.put(KEY_BODY, notatka.getTresc());  // treï¿½ï¿½ notatki
 
         // wstawienie notatki do bazy
         db.insert(TABLE_NOTES, null, values);
@@ -70,9 +72,9 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public Notatka getNote(int id) {
 
         // zamiast new String[] { KEY_ID, KEY_TITLE, KEY_BODY }
-        // mo¿emy u¿yæ null (wszystkie kolumny)
-        Cursor cursor = db.query(TABLE_NOTES, new String[] { KEY_ID, KEY_TITLE, KEY_BODY },
-                KEY_ID + "=?", new String[] { String.valueOf(id) }, null, null, null, null);
+        // moï¿½emy uï¿½yï¿½ null (wszystkie kolumny)
+        Cursor cursor = db.query(TABLE_NOTES, new String[]{KEY_ID, KEY_TITLE, KEY_BODY},
+                KEY_ID + "=?", new String[]{String.valueOf(id)}, null, null, null, null);
 
         if (cursor != null)
             cursor.moveToFirst();
@@ -80,7 +82,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         Notatka notatka = new Notatka(Integer.parseInt(cursor.getString(0)),
                 cursor.getString(1), cursor.getString(2));
 
-        // zwracamy notatkê
+        // zwracamy notatkï¿½
         return notatka;
     }
 
@@ -92,10 +94,10 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         // zapytanie SQL
         String selectQuery = "SELECT  * FROM " + TABLE_NOTES;
 
-        // inny sposób wywo³ania zapytania
+        // inny sposï¿½b wywoï¿½ania zapytania
         Cursor cursor = db.rawQuery(selectQuery, null);
 
-        // pêtla przez wszystkie elementy z dodzwaniem ich do listy
+        // pï¿½tla przez wszystkie elementy z dodzwaniem ich do listy
         if (cursor.moveToFirst()) {
             do {
                 Notatka notatka = new Notatka();
@@ -115,7 +117,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     public Cursor fetchAllNotes() {
         // wszystkie notatki w formie obiektu klasy Cursor
-        return db.query(TABLE_NOTES, new String[] {KEY_ID, KEY_TITLE, KEY_BODY}, null, null, null, null, null);
+        return db.query(TABLE_NOTES, new String[]{KEY_ID, KEY_TITLE, KEY_BODY}, null, null, null, null, null);
     }
 
     // pobranie liczby notatek w bazie
@@ -124,7 +126,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         String countQuery = "SELECT  * FROM " + TABLE_NOTES;
         Cursor cursor = db.rawQuery(countQuery, null);
 
-        // zwracamy liczbê wierszy
+        // zwracamy liczbï¿½ wierszy
         return cursor.getCount();
     }
 
@@ -137,22 +139,22 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
         // aktualizacja wiersza
         return db.update(TABLE_NOTES, values, KEY_ID + " = ?",
-                new String[] { String.valueOf(notatka.getId()) });
+                new String[]{String.valueOf(notatka.getId())});
     }
 
-    // usuniêcie pojedynczej notatki
+    // usuniï¿½cie pojedynczej notatki
     public void deleteNote(Notatka notatka) {
 
         db.delete(TABLE_NOTES, KEY_ID + " = ?",
-                new String[] { String.valueOf(notatka.getId()) });
+                new String[]{String.valueOf(notatka.getId())});
 
     }
 
-    // usuniêcie pojedynczej notatki po ID
+    // usuniï¿½cie pojedynczej notatki po ID
     public void deleteNote(long id) {
 
         db.delete(TABLE_NOTES, KEY_ID + " = ?",
-                new String[] { String.valueOf(id) });
+                new String[]{String.valueOf(id)});
 
     }
 
