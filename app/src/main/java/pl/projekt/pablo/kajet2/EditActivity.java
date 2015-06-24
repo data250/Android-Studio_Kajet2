@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
@@ -42,6 +43,20 @@ public class EditActivity extends ActionBarActivity {
         tresc.setText(note.getTresc());
         data.setText(note.getDate());
 
+        RadioButton rLow = (RadioButton) findViewById(R.id.radioLow);
+        RadioButton rMedium = (RadioButton) findViewById(R.id.radioMedium);
+        RadioButton rHigh = (RadioButton) findViewById(R.id.radioHigh);
+        System.out.println("PRIORYTET:");
+
+        String zaznacz = note.getPrior();
+
+        String s1 = getString(R.string.db_niski);
+        String s2 = getString(R.string.db_normalny);
+        String s3 = getString(R.string.db_wysoki);
+//        rLow.setPressed(true);
+ if (s1.equals(zaznacz)) rLow.setChecked(true);
+if (s2.equals(zaznacz)) rMedium.setChecked(true);
+ if (s3.equals(zaznacz)) rHigh.setChecked(true);
 
 
         return true;
@@ -88,7 +103,25 @@ public class EditActivity extends ActionBarActivity {
         SimpleDateFormat simpleDateHere = new SimpleDateFormat("yyyy-MM-dd kk:mm:ss");
         String date = simpleDateHere.format(new Date());
 
-        Notatka note = new Notatka(idEdit ,title, body, date);
+
+        String prior = getString(R.string.db_normalny);
+        RadioButton rLow = (RadioButton) findViewById(R.id.radioLow);
+        RadioButton rMedium = (RadioButton) findViewById(R.id.radioMedium);
+        RadioButton rHigh = (RadioButton) findViewById(R.id.radioHigh);
+
+
+
+        if (rLow.isChecked()) {
+            prior = getString(R.string.db_niski);
+        }
+        if (rMedium.isChecked()) {
+            prior = getString(R.string.db_normalny);
+        }
+        if (rHigh.isChecked()) {
+            prior = getString(R.string.db_wysoki);
+        }
+
+        Notatka note = new Notatka(idEdit ,title, body, date, prior);
         db.updateNote(note);
         db.close();
         finish();

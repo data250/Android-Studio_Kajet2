@@ -6,11 +6,14 @@ public class Notatka {
     private String tytul;
     private String tresc;
     private String date;
+    private String prior;
 
     public Notatka() {
         this.id = 0;
         this.tytul = null;
         this.tresc = null;
+        this.prior = null;
+        this.date = null;
     }
     public Notatka(long id, String tytul, String tresc) {
         this.id = id;
@@ -21,16 +24,25 @@ public class Notatka {
         this.tytul = tytul;
         this.tresc = tresc;
     }
-    public Notatka(String tytul, String tresc, String date) {
+    public Notatka(String tytul, String tresc, String date, String prior) {
         this.tytul = tytul;
         this.tresc = tresc;
         this.date = date;
+        this.prior = prior;
     }
     public Notatka(long id, String tytul, String tresc, String date) {
         this.tytul = tytul;
         this.tresc = tresc;
         this.date = date;
         this.id =id;
+    }
+
+    public Notatka(long id, String tytul, String tresc, String date, String prior) {
+        this.tytul = tytul;
+        this.tresc = tresc;
+        this.date = date;
+        this.id = id;
+        this.prior = prior;
     }
 
 
@@ -64,6 +76,14 @@ public class Notatka {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public String getPrior() {
+        return prior;
+    }
+
+    public void setPrior(String prior) {
+        this.prior = prior;
     }
 
     @Override
