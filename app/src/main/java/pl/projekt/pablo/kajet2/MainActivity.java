@@ -80,8 +80,8 @@ public class MainActivity extends ListActivity {
         Cursor c = db.fetchAllNotes();
         startManagingCursor(c);
 
-        String[] from = new String[] { DatabaseHandler.KEY_TITLE,  DatabaseHandler.KEY_BODY};
-        int[] to = new int[] { R.id.noteTitle, R.id.noteInfo };
+        String[] from = new String[] { DatabaseHandler.KEY_TITLE,  DatabaseHandler.KEY_BODY, DatabaseHandler.KEY_PRIOR};
+        int[] to = new int[] { R.id.noteTitle, R.id.noteInfo, R.id.notePrior };
 
         // Uzupelniamy liste wartosciami ttttttttttttttttetst
         SimpleCursorAdapter notes = new SimpleCursorAdapter(this, R.layout.list_item, c, from, to);

@@ -41,9 +41,10 @@ public class AddNoteActivity extends Activity {
         SimpleDateFormat simpleDateHere = new SimpleDateFormat("yyyy-MM-dd kk:mm:ss");
         String date = simpleDateHere.format(new Date());
 
+        String prior = "LOW";
 
 
-        Notatka note = new Notatka(title, body, date);
+        Notatka note = new Notatka(title, body, date, prior);
         db.addNote(note);
         finish();
     }
