@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Note2</string>
+    <string name="add_note">Add note</string>
+    <string name="body">Note content</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="menu_settings">Settings</string>
+    <string name="modified">Last change:</string>
+    <string name="nie_usuwaj">DONT DELETE</string>
+    <string name="no_notes">No notes</string>
+    <string name="operacja">(this operation can not be undone!)</string>
+    <string name="potwierdzenie">Are you sure you want to delete ALL the notes?</string>
+    <string name="powrot">BACK</string>
+    <string name="save">Save</string>
+    <string name="title">Note title</string>
+    <string name="title_activity_add_note">New note</string>
+    <string name="title_activity_delete_all">Delete all</string>
+    <string name="title_activity_edit">Edit note</string>
+    <string name="usun">DELETE</string>
+    <string name="usun_all">Delete ALL notes</string>
+    <string name="usun_wszystki">Delete all</string>
+</resources>
