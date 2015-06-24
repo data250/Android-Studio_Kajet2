@@ -88,7 +88,9 @@ public class EditActivity extends ActionBarActivity {
         SimpleDateFormat simpleDateHere = new SimpleDateFormat("yyyy-MM-dd kk:mm:ss");
         String date = simpleDateHere.format(new Date());
 
-        Notatka note = new Notatka(idEdit ,title, body, date);
+        String prior = "MEDIUM";
+
+        Notatka note = new Notatka(idEdit ,title, body, date, prior);
         db.updateNote(note);
         db.close();
         finish();
