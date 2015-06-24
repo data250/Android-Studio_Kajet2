@@ -48,21 +48,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/niski"
-            android:id="@+id/radioButton"
+            android:id="@+id/radioLow"
             android:checked="false" />
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/normalny"
-            android:id="@+id/radioButton2"
+            android:id="@+id/radioMedium"
             android:checked="true" />
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/wysoki"
-            android:id="@+id/radioButton3"
+            android:id="@+id/radioHigh"
             android:checked="false" />
     </RadioGroup>
 

@@ -54,9 +54,9 @@ public class EditActivity extends ActionBarActivity {
         String s2 = getString(R.string.db_normalny);
         String s3 = getString(R.string.db_wysoki);
 //        rLow.setPressed(true);
-  //      if (s1.equals(zaznacz)) rLow.setChecked(true);
-   //     if (s2.equals(zaznacz)) rMedium.setChecked(true);
-     //   if (s3.equals(zaznacz)) rHigh.setChecked(true);
+ if (s1.equals(zaznacz)) rLow.setChecked(true);
+if (s2.equals(zaznacz)) rMedium.setChecked(true);
+ if (s3.equals(zaznacz)) rHigh.setChecked(true);
 
 
         return true;
@@ -111,9 +111,15 @@ public class EditActivity extends ActionBarActivity {
 
 
 
-        if (rLow.isChecked()) prior = getString(R.string.db_niski);
-        if (rMedium.isChecked()) prior = getString(R.string.db_normalny);
-        if (rHigh.isChecked()) prior = getString(R.string.db_wysoki);
+        if (rLow.isChecked()) {
+            prior = getString(R.string.db_niski);
+        }
+        if (rMedium.isChecked()) {
+            prior = getString(R.string.db_normalny);
+        }
+        if (rHigh.isChecked()) {
+            prior = getString(R.string.db_wysoki);
+        }
 
         Notatka note = new Notatka(idEdit ,title, body, date, prior);
         db.updateNote(note);
