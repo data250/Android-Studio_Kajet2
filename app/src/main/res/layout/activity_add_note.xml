@@ -10,6 +10,43 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:hint="@string/title" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/priorytet"
+        android:id="@+id/textView7"
+        android:layout_gravity="center_horizontal" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/niski"
+            android:id="@+id/radioLow"
+            android:checked="false" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/normalny"
+            android:id="@+id/radioMedium"
+            android:checked="true" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/wysoki"
+            android:id="@+id/radioHigh"
+            android:checked="false" />
+    </RadioGroup>
+
     <EditText
         android:id="@+id/body"
         android:layout_width="fill_parent"

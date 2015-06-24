@@ -21,4 +21,12 @@
     <string name="potwierdzenie">Jesteś pewien że chcesz usunąć WSZYSTKIE notatki?</string>
     <string name="operacja">(tej operacji nie można cofnąć!)</string>
     <string name="nie_usuwaj">NIE USUWAJ</string>
+    <string name="priorytet">PRIORYTET:</string>
+    <string name="niski">Niski</string>
+    <string name="normalny">Normalny</string>
+    <string name="wysoki">Wysoki</string>
+    <string name="default_db">MEDIUM</string>
+    <string name="db_niski">NISKI</string>
+    <string name="db_normalny">NORMALNY</string>
+    <string name="db_wysoki">WYSOKI</string>
 </resources>

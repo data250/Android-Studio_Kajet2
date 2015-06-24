@@ -12,6 +12,8 @@ public class Notatka {
         this.id = 0;
         this.tytul = null;
         this.tresc = null;
+        this.prior = null;
+        this.date = null;
     }
     public Notatka(long id, String tytul, String tresc) {
         this.id = id;

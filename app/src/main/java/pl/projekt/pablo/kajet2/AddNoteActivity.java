@@ -9,6 +9,8 @@ import android.app.Activity;
 import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -41,7 +43,17 @@ public class AddNoteActivity extends Activity {
         SimpleDateFormat simpleDateHere = new SimpleDateFormat("yyyy-MM-dd kk:mm:ss");
         String date = simpleDateHere.format(new Date());
 
-        String prior = "MEDIUM";
+        String prior = getString(R.string.default_db);
+
+
+
+        RadioButton rLow = (RadioButton) findViewById(R.id.radioLow);
+        RadioButton rMedium = (RadioButton) findViewById(R.id.radioMedium);
+        RadioButton rHigh = (RadioButton) findViewById(R.id.radioHigh);
+
+        if (rLow.isChecked()) prior = getString(R.string.db_niski);
+        if (rMedium.isChecked()) prior = getString(R.string.db_normalny);
+        if (rHigh.isChecked()) prior = getString(R.string.db_wysoki);
 
 
         Notatka note = new Notatka(title, body, date, prior);
